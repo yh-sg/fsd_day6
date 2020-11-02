@@ -1,0 +1,27 @@
+{{#if empty}}
+<h4>No result!</h4>
+{{else}}
+
+<h2>Search result!: {{q}}</h2>
+<table border="1">
+    <tr>
+        <td>ID</td>
+        <td>Name</td>
+        <td>Category</td>
+        <td>Rating</td>
+        <td>Installs</td>
+    </tr>
+    {{#each recs}}
+            <tr>
+                <td>{{this.app_id}}</td>
+                <td>{{this.name}}</td>
+                <td>{{this.category}}</td>
+                <td>{{this.rating}}</td>
+                <td>{{this.installs}}</td>
+            </tr>
+    {{/each}}
+</table>
+{{/if}}
+<button type="submit">Previous</button>
+<button type="submit">Next</button>
+{{!-- Involves limit and offset! --}}
